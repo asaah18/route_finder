@@ -21,3 +21,25 @@ class Stack:
     def display(self):
         """display the content of stack in CLI"""
         print("stack:", self.stack, ">top")
+
+        
+class Graph:
+    """a class to represent graph using adjacency list -dictionary of list-"""
+    graph = {}  # adjacency list  |   dictionary of list
+
+    def add_node(self, node, connected_nodes):
+        """add node into graph
+
+        if node is repeated, previous node is removed
+
+        :param connected_nodes: list of connected nodes
+        :param node: the node to be added"""
+        self.graph[node] = connected_nodes
+
+    def get_all_nodes(self):
+        """:return list of all nodes in graph"""
+        return [node for node in self.graph.keys()]
+
+    def get_children_of_node(self, node):
+        """:return list of connected nodes to the given node"""
+        return self.graph[node]
