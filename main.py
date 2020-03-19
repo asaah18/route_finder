@@ -1,4 +1,3 @@
-# written by asaah18
 from data_structure import Graph, Stack
 
 
@@ -20,71 +19,262 @@ def get_user_choice(choices) -> int:
         else:
             return int(user_input)
 
-class FindRoute:
-    """a class to find route between 2 cities using depth first search"""
-    graph = Graph()
-    stack = Stack()
-    start_city = None
-    target_city = None
 
+class MaccaMap:
     def __init__(self):
+        self.graph = Graph()
         self.setup_graph()
-        self.set_starting_city()
-        self.set_target_city()
-        self.depth_first_search()
 
     def setup_graph(self):
-        self.graph.add_node("Buraydah", ["Unayzah", "Riyadh-Alkhabra", "Al-Bukayriyah"])
-        self.graph.add_node("Unayzah", ["AlZulfi", "Al-Badai", "Buraydah"])
-        self.graph.add_node("Riyadh-Alkhabra", ["Buraydah", "Al-Badai"])
-        self.graph.add_node("Al-Bukayriyah", ["Buraydah", "Sheehyah"])
-        self.graph.add_node("AlZulfi", ["Unayzah", "UmSedrah"])
-        self.graph.add_node("Al-Badai", ["Unayzah", "Riyadh-Alkhabra", "AlRass"])
-        self.graph.add_node("Sheehyah", ["Al-Bukayriyah", "Dhalfa"])
-        self.graph.add_node("UmSedrah", ["AlZulfi", "Shakra"])
-        self.graph.add_node("AlRass", ["Al-Badai"])
-        self.graph.add_node("Dhalfa", ["Sheehyah", "Mulaida"])
-        self.graph.add_node("Shakra", ["UmSedrah"])
-        self.graph.add_node("Mulaida", ["Dhalfa"])
+        self.graph.add_node("Kaaba", [
+            {
+                'name': "Al-Marwah",
+                'distance': 310
+            },
+            {
+                'name': "Al-Safa",
+                'distance': 140
+            },
+            {
+                'name': "King AbdulAziz Gate",
+                'distance': 100
+            },
+            {
+                'name': "Tawsaat King Fahad",
+                'distance': 182
+            }])
+
+        self.graph.add_node("Al-Marwah", [
+            {
+                'name': "Kaaba",
+                'distance': 310
+            },
+            {
+                'name': "Macca Library",
+                'distance': 280
+            },
+            {
+                'name': "Al-Safa",
+                'distance': 370
+            }])
+
+        self.graph.add_node("Al Salam Gate", [
+            {
+                'name': "Al-Safa",
+                'distance': 90
+            },
+            {
+                'name': "Macca Library",
+                'distance': 320
+            }])
+
+        self.graph.add_node("Al-Safa", [
+            {
+                'name': "Kaaba",
+                'distance': 140
+            },
+            {
+                'name': "Al-Marwah",
+                'distance': 370
+            },
+            {
+                'name': "Al Salam Gate",
+                'distance': 90
+            },
+            {
+                'name': "King AbdulAziz Gate",
+                'distance': 170
+            }
+        ])
+
+        self.graph.add_node("King AbdulAziz Gate", [
+            {
+                'name': "Kaaba",
+                'distance': 100
+            },
+            {
+                'name': "Al-Safa",
+                'distance': 170
+            },
+            {
+                'name': "Al-Safwa Hotel",
+                'distance': 200
+            },
+            {
+                'name': "AlWaqf",
+                'distance': 215
+            }
+        ])
+
+        self.graph.add_node("Al-Safwa Hotel", [
+            {
+                'name': "King AbdulAziz Gate",
+                'distance': 200
+            },
+            {
+                'name': "AlHaramain Administration",
+                'distance': 225
+            },
+            {
+                'name': "AlWaqf",
+                'distance': 130
+            }
+        ])
+
+        self.graph.add_node("AlWaqf", [
+            {
+                'name': "King AbdulAziz Gate",
+                'distance': 130
+            },
+            {
+                'name': "Al-Safwa Hotel",
+                'distance': 130
+            },
+        ])
+
+        self.graph.add_node("AlHaramain Administration", [
+            {
+                'name': "Al-Safwa Hotel",
+                'distance': 225
+            },
+        ])
+
+        self.graph.add_node("Tawsaat King Fahad", [
+            {
+                'name': "Kaaba",
+                'distance': 182
+            },
+            {
+                'name': "Abraj Maccah",
+                'distance': 120
+            },
+            {
+                'name': "Dar Al-Tawheed",
+                'distance': 135
+            },
+            {
+                'name': "Tawsaat King Abdullah",
+                'distance': 220
+            }
+        ])
+
+        self.graph.add_node("Abraj Maccah", [
+            {
+                'name': "Tawsaat King Fahad",
+                'distance': 120
+            },
+            {
+                'name': "Dar Al-Tawheed",
+                'distance': 150
+            },
+        ])
+
+        self.graph.add_node("Dar Al-Tawheed", [
+            {
+                'name': "Tawsaat King Fahad",
+                'distance': 135
+            },
+            {
+                'name': "Abraj Maccah",
+                'distance': 150
+            },
+            {
+                'name': "Jabal Omar",
+                'distance': 350
+            }
+        ])
+
+        self.graph.add_node("Tawsaat King Abdullah", [
+            {
+                'name': "Jabal Alkaaba",
+                'distance': 550
+            },
+            {
+                'name': "Tawsaat King Fahad",
+                'distance': 220
+            },
+            {
+                'name': "Jabal Omar",
+                'distance': 450
+            }
+        ])
+
+        self.graph.add_node("Jabal Omar", [
+            {
+                'name': "Dar Al-Tawheed",
+                'distance': 350
+            },
+            {
+                'name': "Tawsaat King Abdullah",
+                'distance': 450
+            }
+        ])
+
+        self.graph.add_node("Jabal Alkaaba", [
+            {
+                'name': "Tawsaat King Abdullah",
+                'distance': 550
+            }
+        ])
         print("graph has been setup.")
 
-    def set_starting_city(self):
-        """set the starting city as a string"""
+    def set_starting_place(self):
+        """set the starting place as a string"""
         cities = self.graph.get_all_nodes()
-        print("Choose a city number to start with:" + "\n")
-        self.start_city = cities[get_user_choice(cities)]
-        print("you will start at", self.start_city, "city")
+        print("Choose a place number to start with:" + "\n")
+        start_place = cities[0]
+        print("you will start at", start_place, "place")
+        return start_place
 
-    def set_target_city(self):
-        """set the starting city as a string"""
+    def set_target_place(self):
+        """set the starting place as a string"""
         cities = self.graph.get_all_nodes()
-        print("Choose a city number as a target:" + "\n")
-        self.target_city = cities[get_user_choice(cities)]
-        print("your target city is", self.target_city, "city")
+        print("Choose a place number as a target:" + "\n")
+        target_place = cities[1]
+        print("your target place is", target_place, "place")
+        return target_place
+
+
+class FindRoute:
+    """a class to find route between 2 cities using depth first search"""
+
+    def __init__(self):
+        self.stack = Stack()
+        self.meccaMap = MaccaMap()
+        self.start_place = self.meccaMap.set_starting_place()
+        self.target_place = self.meccaMap.set_target_place()
+        self.depth_first_search()
 
     def depth_first_search(self):
-        """travel form start_city to target_city from left to right while logging the traveled cities"""
+        """travel form start_place to target_place from left to right while logging the traveled cities"""
         visited_cities = []
         print("----------Depth First Search Traverse-------------")
-        self.stack.unique_push(self.start_city)
+        self.stack.unique_push(self.start_place)
 
         while not self.stack.is_empty():
-            current_city = self.stack.pop()
-            visited_cities.append(current_city)
-            print("I am at", current_city, "city")
+            current_place = self.stack.pop()
+            visited_cities.append(current_place)
+            print("I am at", current_place, "place")
             self.stack.display()
             print("Visited cities are:", visited_cities)
-            if current_city is self.target_city:
-                print("I have reached the target city")
+            if current_place is self.target_place:
+                print("I have reached the target place")
                 break
             else:
-                children_of_city = self.graph.get_children_of_node(current_city)
-                print("The children cities are:", children_of_city)
-                for city in children_of_city:
+                connected_nodes = self.meccaMap.graph.get_children_of_node(current_place)
+
+                print("The connected nodes are:")
+                print()
+                for node in connected_nodes:
+                    for key, value in node.items():
+                        print(key, ': ', value)
+                    print()
+
+                for node in connected_nodes:
                     # push to stack if not visited and not in stack
-                    if city not in visited_cities:
-                        self.stack.unique_push(city)
-                        # print(city, "has been added to stack")
+                    if node['name'] not in visited_cities:
+                        self.stack.unique_push(node['name'])
+                        # print(node, "has been added to stack")
 
                 self.stack.display()
             print("-----------------------------------------")
