@@ -1,5 +1,7 @@
+from collections import deque
+
 class Stack:
-    """a class to represent stack data structure with no redundant in stack"""
+    """a class to represent stack(LIFO) data structure with no redundant values"""
     stack = []
 
     def unique_push(self, item):
@@ -22,7 +24,32 @@ class Stack:
         """display the content of stack in CLI"""
         print("stack:", self.stack, ">top")
 
-        
+
+class Queue:
+    """a class to represent queue(FIFO) data structure with no redundant values"""
+    queue = deque()
+
+    def unique_enqueue(self, item):
+        """push a node into queue if it's not there
+
+        :parameter item : the node to add to queue
+        """
+        if item not in self.queue:
+            self.queue.append(item)
+
+    def dequeue(self):
+        """:return first item in queue or declare error."""
+        return self.queue.popleft()
+
+    def is_empty(self) -> bool:
+        """:return boolean : True or False """
+        return not self.queue
+
+    def display(self):
+        """display the content of queue in CLI"""
+        print("queue:", list(self.queue))
+
+
 class Graph:
     """a class to represent graph using adjacency list -dictionary of list-"""
     graph = {}  # adjacency list  |   dictionary of list
