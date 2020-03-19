@@ -222,6 +222,7 @@ class MaccaMap:
         """set the starting place as a string"""
         cities = self.graph.get_all_nodes()
         print("Choose a place number to start with:" + "\n")
+        # self.start_city = cities[get_user_choice(cities)]
         start_place = cities[0]
         print("you will start at", start_place, "place")
         return start_place
@@ -230,6 +231,7 @@ class MaccaMap:
         """set the starting place as a string"""
         cities = self.graph.get_all_nodes()
         print("Choose a place number as a target:" + "\n")
+        # self.start_city = cities[get_user_choice(cities)]
         target_place = cities[1]
         print("your target place is", target_place, "place")
         return target_place
