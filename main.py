@@ -1,7 +1,6 @@
-# No code from the web has been used, every line has been writting by the students.
+# No code from the web has been used, every line has been writting by the students
 
 from data_structure import Graph, Stack, Queue
-from greedybfs import GBFS
 import json
 
 
