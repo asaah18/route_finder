@@ -1,4 +1,5 @@
 from data_structure import Graph, Stack, Queue
+from json_reader import read_json_file
 
 
 def get_user_choice(choices) -> int:
@@ -21,202 +22,23 @@ def get_user_choice(choices) -> int:
 
 
 class MaccaMap:
+    graph = Graph()
+    map_file_path = "macca_map.json"
+
     def __init__(self):
-        self.graph = Graph()
         self.setup_graph()
 
     def setup_graph(self):
-        self.graph.add_node("Kaaba", [
-            {
-                'name': "Al-Marwah",
-                'distance': 310
-            },
-            {
-                'name': "Al-Safa",
-                'distance': 140
-            },
-            {
-                'name': "King AbdulAziz Gate",
-                'distance': 100
-            },
-            {
-                'name': "Tawsaat King Fahad",
-                'distance': 182
-            }])
-
-        self.graph.add_node("Al-Marwah", [
-            {
-                'name': "Kaaba",
-                'distance': 310
-            },
-            {
-                'name': "Macca Library",
-                'distance': 280
-            },
-            {
-                'name': "Al-Safa",
-                'distance': 370
-            }])
-
-        self.graph.add_node("Al Salam Gate", [
-            {
-                'name': "Al-Safa",
-                'distance': 90
-            },
-            {
-                'name': "Macca Library",
-                'distance': 320
-            }])
-
-        self.graph.add_node("Al-Safa", [
-            {
-                'name': "Kaaba",
-                'distance': 140
-            },
-            {
-                'name': "Al-Marwah",
-                'distance': 370
-            },
-            {
-                'name': "Al Salam Gate",
-                'distance': 90
-            },
-            {
-                'name': "King AbdulAziz Gate",
-                'distance': 170
-            }
-        ])
-
-        self.graph.add_node("King AbdulAziz Gate", [
-            {
-                'name': "Kaaba",
-                'distance': 100
-            },
-            {
-                'name': "Al-Safa",
-                'distance': 170
-            },
-            {
-                'name': "Al-Safwa Hotel",
-                'distance': 200
-            },
-            {
-                'name': "AlWaqf",
-                'distance': 215
-            }
-        ])
-
-        self.graph.add_node("Al-Safwa Hotel", [
-            {
-                'name': "King AbdulAziz Gate",
-                'distance': 200
-            },
-            {
-                'name': "AlHaramain Administration",
-                'distance': 225
-            },
-            {
-                'name': "AlWaqf",
-                'distance': 130
-            }
-        ])
-
-        self.graph.add_node("AlWaqf", [
-            {
-                'name': "King AbdulAziz Gate",
-                'distance': 130
-            },
-            {
-                'name': "Al-Safwa Hotel",
-                'distance': 130
-            },
-        ])
-
-        self.graph.add_node("AlHaramain Administration", [
-            {
-                'name': "Al-Safwa Hotel",
-                'distance': 225
-            },
-        ])
-
-        self.graph.add_node("Tawsaat King Fahad", [
-            {
-                'name': "Kaaba",
-                'distance': 182
-            },
-            {
-                'name': "Abraj Maccah",
-                'distance': 120
-            },
-            {
-                'name': "Dar Al-Tawheed",
-                'distance': 135
-            },
-            {
-                'name': "Tawsaat King Abdullah",
-                'distance': 220
-            }
-        ])
-
-        self.graph.add_node("Abraj Maccah", [
-            {
-                'name': "Tawsaat King Fahad",
-                'distance': 120
-            },
-            {
-                'name': "Dar Al-Tawheed",
-                'distance': 150
-            },
-        ])
-
-        self.graph.add_node("Dar Al-Tawheed", [
-            {
-                'name': "Tawsaat King Fahad",
-                'distance': 135
-            },
-            {
-                'name': "Abraj Maccah",
-                'distance': 150
-            },
-            {
-                'name': "Jabal Omar",
-                'distance': 350
-            }
-        ])
-
-        self.graph.add_node("Tawsaat King Abdullah", [
-            {
-                'name': "Jabal Alkaaba",
-                'distance': 550
-            },
-            {
-                'name': "Tawsaat King Fahad",
-                'distance': 220
-            },
-            {
-                'name': "Jabal Omar",
-                'distance': 450
-            }
-        ])
-
-        self.graph.add_node("Jabal Omar", [
-            {
-                'name': "Dar Al-Tawheed",
-                'distance': 350
-            },
-            {
-                'name': "Tawsaat King Abdullah",
-                'distance': 450
-            }
-        ])
-
-        self.graph.add_node("Jabal Alkaaba", [
-            {
-                'name': "Tawsaat King Abdullah",
-                'distance': 550
-            }
-        ])
-        print("graph has been setup.")
+        print("read map file")
+        # read map from json file
+        macca_map = read_json_file(self.map_file_path)
+        # insert into graph
+        print("setup graph...")
+        for node, connected_nodes in macca_map.items():
+            self.graph.add_node(node, connected_nodes)
+            # print("add ", node, "which is connected to:", connected_nodes)
+        print("finished setup graph")
+        # print(self.graph.get_all_nodes())
 
     def set_starting_place(self):
         """set the starting place as a string"""
@@ -247,7 +69,7 @@ class FindRoute:
         self.start_place = self.meccaMap.set_starting_place()
         self.target_place = self.meccaMap.set_target_place()
         self.depth_first_search()
-        print("="*25, "\n", "end of DFS", "="*25)
+        print("=" * 25, "\n", "end of DFS", "=" * 25)
         self.breadth_first_search()
 
     def depth_first_search(self):
