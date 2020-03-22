@@ -53,6 +53,9 @@ class Queue:
 class Graph:
     """a class to represent graph using adjacency list -dictionary of list-"""
     graph = {}  # adjacency list  |   dictionary of list
+    def __init__(self, graph = {}):
+        self.graph = graph
+
 
     def add_node(self, node, connected_nodes):
         """add node into graph

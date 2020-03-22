@@ -1,13 +1,15 @@
+# No code from the web has been used, every line has been writting by the students.
+
 from data_structure import Graph, Stack, Queue
+from greedybfs import GBFS
+import json
 
 
-def get_user_choice(choices) -> int:
+def get_user_choice(choices):
     """
     ask the user to choose from the given choices
-
-    :param choices : list of choices as a string
-    :return index_of_user_input: int
     """
+
     # print choices
     for index, choice in enumerate(choices):
         print("[" + str(index) + "] " + choice)
@@ -22,202 +24,8 @@ def get_user_choice(choices) -> int:
 
 class MaccaMap:
     def __init__(self):
-        self.graph = Graph()
-        self.setup_graph()
-
-    def setup_graph(self):
-        self.graph.add_node("Kaaba", [
-            {
-                'name': "Al-Marwah",
-                'distance': 310
-            },
-            {
-                'name': "Al-Safa",
-                'distance': 140
-            },
-            {
-                'name': "King AbdulAziz Gate",
-                'distance': 100
-            },
-            {
-                'name': "Tawsaat King Fahad",
-                'distance': 182
-            }])
-
-        self.graph.add_node("Al-Marwah", [
-            {
-                'name': "Kaaba",
-                'distance': 310
-            },
-            {
-                'name': "Macca Library",
-                'distance': 280
-            },
-            {
-                'name': "Al-Safa",
-                'distance': 370
-            }])
-
-        self.graph.add_node("Al Salam Gate", [
-            {
-                'name': "Al-Safa",
-                'distance': 90
-            },
-            {
-                'name': "Macca Library",
-                'distance': 320
-            }])
-
-        self.graph.add_node("Al-Safa", [
-            {
-                'name': "Kaaba",
-                'distance': 140
-            },
-            {
-                'name': "Al-Marwah",
-                'distance': 370
-            },
-            {
-                'name': "Al Salam Gate",
-                'distance': 90
-            },
-            {
-                'name': "King AbdulAziz Gate",
-                'distance': 170
-            }
-        ])
-
-        self.graph.add_node("King AbdulAziz Gate", [
-            {
-                'name': "Kaaba",
-                'distance': 100
-            },
-            {
-                'name': "Al-Safa",
-                'distance': 170
-            },
-            {
-                'name': "Al-Safwa Hotel",
-                'distance': 200
-            },
-            {
-                'name': "AlWaqf",
-                'distance': 215
-            }
-        ])
-
-        self.graph.add_node("Al-Safwa Hotel", [
-            {
-                'name': "King AbdulAziz Gate",
-                'distance': 200
-            },
-            {
-                'name': "AlHaramain Administration",
-                'distance': 225
-            },
-            {
-                'name': "AlWaqf",
-                'distance': 130
-            }
-        ])
-
-        self.graph.add_node("AlWaqf", [
-            {
-                'name': "King AbdulAziz Gate",
-                'distance': 130
-            },
-            {
-                'name': "Al-Safwa Hotel",
-                'distance': 130
-            },
-        ])
-
-        self.graph.add_node("AlHaramain Administration", [
-            {
-                'name': "Al-Safwa Hotel",
-                'distance': 225
-            },
-        ])
-
-        self.graph.add_node("Tawsaat King Fahad", [
-            {
-                'name': "Kaaba",
-                'distance': 182
-            },
-            {
-                'name': "Abraj Maccah",
-                'distance': 120
-            },
-            {
-                'name': "Dar Al-Tawheed",
-                'distance': 135
-            },
-            {
-                'name': "Tawsaat King Abdullah",
-                'distance': 220
-            }
-        ])
-
-        self.graph.add_node("Abraj Maccah", [
-            {
-                'name': "Tawsaat King Fahad",
-                'distance': 120
-            },
-            {
-                'name': "Dar Al-Tawheed",
-                'distance': 150
-            },
-        ])
-
-        self.graph.add_node("Dar Al-Tawheed", [
-            {
-                'name': "Tawsaat King Fahad",
-                'distance': 135
-            },
-            {
-                'name': "Abraj Maccah",
-                'distance': 150
-            },
-            {
-                'name': "Jabal Omar",
-                'distance': 350
-            }
-        ])
-
-        self.graph.add_node("Tawsaat King Abdullah", [
-            {
-                'name': "Jabal Alkaaba",
-                'distance': 550
-            },
-            {
-                'name': "Tawsaat King Fahad",
-                'distance': 220
-            },
-            {
-                'name': "Jabal Omar",
-                'distance': 450
-            }
-        ])
-
-        self.graph.add_node("Jabal Omar", [
-            {
-                'name': "Dar Al-Tawheed",
-                'distance': 350
-            },
-            {
-                'name': "Tawsaat King Abdullah",
-                'distance': 450
-            }
-        ])
-
-        self.graph.add_node("Jabal Alkaaba", [
-            {
-                'name': "Tawsaat King Abdullah",
-                'distance': 550
-            }
-        ])
-        print("graph has been setup.")
-
+        self.graph = Graph(json.loads(open('mecca-map.json').read()))
+    
     def set_starting_place(self):
         """set the starting place as a string"""
         cities = self.graph.get_all_nodes()
@@ -246,9 +54,14 @@ class FindRoute:
         self.meccaMap = MaccaMap()
         self.start_place = self.meccaMap.set_starting_place()
         self.target_place = self.meccaMap.set_target_place()
-        self.depth_first_search()
-        print("="*25, "\n", "end of DFS", "="*25)
-        self.breadth_first_search()
+    
+    def printNodes(self, queue):
+        print('-------------- Nodes --------------')
+        print()
+        for node in queue:
+            print(node['name'], ', ')
+        print()
+
 
     def depth_first_search(self):
         """travel form start_place to target_place from left to right while logging the traveled cities"""
@@ -262,19 +75,16 @@ class FindRoute:
             print("I am at", current_place, "place")
             self.stack.display()
             print("Visited cities are:", visited_places)
-            if current_place is self.target_place:
+            if current_place == self.target_place:
                 print("I have reached the target place")
                 break
             else:
-                connected_nodes = self.meccaMap.graph.get_children_of_node(current_place)
+                connected_nodes = self.meccaMap.graph.get_children_of_node(
+                    current_place)
 
                 print("The connected nodes are:")
                 print()
-                for node in connected_nodes:
-                    for key, value in node.items():
-                        print(key, ': ', value)
-                    print()
-
+                self.printNodes(connected_nodes)
                 for node in connected_nodes:
                     # push to stack if not visited and not in stack
                     if node['name'] not in visited_places:
@@ -299,19 +109,17 @@ class FindRoute:
             print("I am at", current_place, "place")
             self.queue.display()
             print("Visited places are:", visited_places)
-            if current_place is self.target_place:
+            if current_place == self.target_place:
                 print("I have reached the target place")
                 break
             else:
-                connected_nodes = self.meccaMap.graph.get_children_of_node(current_place)
+                connected_nodes = self.meccaMap.graph.get_children_of_node(
+                    current_place)
 
                 print("The connected nodes are:")
                 print()
-                for node in connected_nodes:
-                    for key, value in node.items():
-                        print(key, ': ', value)
-                    print()
-
+                self.printNodes(connected_nodes)
+                
                 for node in connected_nodes:
                     # push to stack if not visited and not in stack
                     if node['name'] not in visited_places:
@@ -324,5 +132,47 @@ class FindRoute:
             # executed if target not found(break statement not executed)
             print("I wasn't able to find a route")
 
+    def greedy_first_search(self):
+        visited = complate_path =['']
+        current_place = visited[0] = complate_path[0] = self.start_place
+        
+        while current_place is not self.target_place:
+            connected_nodes = self.meccaMap.graph.get_children_of_node(
+                current_place)
+            queue = sorted(connected_nodes, key=lambda i: i['distance'])
+            self.printNodes(queue)
+            for place in queue:
+                first_in_queue = queue.pop(0)['name']
+                print('remove ', first_in_queue, 'from queue..')
+                print()
+                
+                # connected nodes to the first element in queue which we just pop-ed up
+                connected_nodes_to_first = sorted(self.meccaMap.graph.get_children_of_node(first_in_queue), key=lambda i: i['distance'])
+                
+                for place in connected_nodes_to_first:
+                    if place['name'] == self.target_place:
+                        complate_path.append(first_in_queue)
+                        complate_path.append(place['name'])
+                        print("I have reached the target place")
+                        return complate_path
+                    
+                # connected nodes to the first element in queue which we just pop-ed up, but filtered from visited places to add them to the queue
+                connected_nodes_filtered = [i for i in connected_nodes_to_first if i['name'] not in visited] 
+                    
+                queue.extend(connected_nodes_filtered)
+                self.printNodes(queue)
 
-FindRoute()
+        # print("="*25, "\n", "end of DFS", "="*25)
+        # print("="*25, "\n", "end of DFS", "="*25)
+        # print("="*25, "\n", "end of DFS", "="*25)
+
+FindRoute().depth_first_search()
+print("="*25, "\n", "end of DFS", "="*25)
+FindRoute().breadth_first_search()
+print("="*25, "\n", "end of BFS", "="*25) 
+
+
+# complate_path = FindRoute().greedy_first_search()
+print()
+print('complate path: ')
+# print(*complate_path, sep=" -> ")
