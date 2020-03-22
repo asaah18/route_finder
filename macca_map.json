@@ -1,0 +1,182 @@
+{
+    "Abraj Maccah": [
+        {
+            "distance": 120,
+            "name": "Tawsaat King Fahad"
+        },
+        {
+            "distance": 150,
+            "name": "Dar Al-Tawheed"
+        }
+    ],
+    "Al Salam Gate": [
+        {
+            "distance": 90,
+            "name": "Al-Safa"
+        },
+        {
+            "distance": 320,
+            "name": "Macca Library"
+        }
+    ],
+    "Al-Marwah": [
+        {
+            "distance": 310,
+            "name": "Kaaba"
+        },
+        {
+            "distance": 280,
+            "name": "Macca Library"
+        },
+        {
+            "distance": 370,
+            "name": "Al-Safa"
+        }
+    ],
+    "Al-Safa": [
+        {
+            "distance": 140,
+            "name": "Kaaba"
+        },
+        {
+            "distance": 370,
+            "name": "Al-Marwah"
+        },
+        {
+            "distance": 90,
+            "name": "Al Salam Gate"
+        },
+        {
+            "distance": 170,
+            "name": "King AbdulAziz Gate"
+        }
+    ],
+    "Al-Safwa Hotel": [
+        {
+            "distance": 200,
+            "name": "King AbdulAziz Gate"
+        },
+        {
+            "distance": 225,
+            "name": "AlHaramain Administration"
+        },
+        {
+            "distance": 130,
+            "name": "AlWaqf"
+        }
+    ],
+    "AlHaramain Administration": [
+        {
+            "distance": 225,
+            "name": "Al-Safwa Hotel"
+        }
+    ],
+    "AlWaqf": [
+        {
+            "distance": 130,
+            "name": "King AbdulAziz Gate"
+        },
+        {
+            "distance": 130,
+            "name": "Al-Safwa Hotel"
+        }
+    ],
+    "Dar Al-Tawheed": [
+        {
+            "distance": 135,
+            "name": "Tawsaat King Fahad"
+        },
+        {
+            "distance": 150,
+            "name": "Abraj Maccah"
+        },
+        {
+            "distance": 350,
+            "name": "Jabal Omar"
+        }
+    ],
+    "Jabal Alkaaba": [
+        {
+            "distance": 550,
+            "name": "Tawsaat King Abdullah"
+        }
+    ],
+    "Jabal Omar": [
+        {
+            "distance": 350,
+            "name": "Dar Al-Tawheed"
+        },
+        {
+            "distance": 450,
+            "name": "Tawsaat King Abdullah"
+        }
+    ],
+    "Kaaba": [
+        {
+            "distance": 310,
+            "name": "Al-Marwah"
+        },
+        {
+            "distance": 140,
+            "name": "Al-Safa"
+        },
+        {
+            "distance": 100,
+            "name": "King AbdulAziz Gate"
+        },
+        {
+            "distance": 182,
+            "name": "Tawsaat King Fahad"
+        }
+    ],
+    "King AbdulAziz Gate": [
+        {
+            "distance": 100,
+            "name": "Kaaba"
+        },
+        {
+            "distance": 170,
+            "name": "Al-Safa"
+        },
+        {
+            "distance": 200,
+            "name": "Al-Safwa Hotel"
+        },
+        {
+            "distance": 215,
+            "name": "AlWaqf"
+        }
+    ],
+    "Tawsaat King Abdullah": [
+        {
+            "distance": 550,
+            "name": "Jabal Alkaaba"
+        },
+        {
+            "distance": 220,
+            "name": "Tawsaat King Fahad"
+        },
+        {
+            "distance": 450,
+            "name": "Jabal Omar"
+        }
+    ],
+    "Tawsaat King Fahad": [
+        {
+            "distance": 182,
+            "name": "Kaaba"
+        },
+        {
+            "distance": 120,
+            "name": "Abraj Maccah"
+        },
+        {
+            "distance": 135,
+            "name": "Dar Al-Tawheed"
+        },
+        {
+            "distance": 220,
+            "name": "Tawsaat King Abdullah"
+        }
+    ]
+}
