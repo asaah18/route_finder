@@ -1,0 +1,276 @@
+Choose a place number to start with:
+
+[0] Kaaba
+[1] Al-Marwah
+[2] Macca Library
+[3] Al Salam Gate
+[4] Al-Safa
+[5] King AbdulAziz Gate      
+[6] Al-Safwa Hotel
+[7] AlWaqf
+[8] AlHaramain Administration
+[9] Tawsaat King Fahad       
+[10] Abraj Maccah
+[11] Dar Al-Tawheed
+[12] Tawsaat King Abdullah   
+[13] Jabal Omar
+[14] Jabal Alkaaba
+
+input: 4
+you will start at Al-Safa place   
+Choose a place number as a target:
+
+[0] Kaaba
+[1] Al-Marwah
+[2] Macca Library
+[3] Al Salam Gate
+[4] Al-Safa
+[5] King AbdulAziz Gate
+[6] Al-Safwa Hotel
+[7] AlWaqf
+[8] AlHaramain Administration
+[9] Tawsaat King Fahad
+[10] Abraj Maccah
+[11] Dar Al-Tawheed
+[12] Tawsaat King Abdullah
+[13] Jabal Omar
+[14] Jabal Alkaaba
+
+input: 1
+your target place is Al-Marwah place
+----------Depth First Search Traverse-------------
+I am at Al-Safa place
+stack: [] >top
+Visited cities are: ['Al-Safa']
+The connected nodes are:
+
+-------------- Nodes --------------
+
+Kaaba , 
+Al-Marwah ,
+Al Salam Gate ,
+King AbdulAziz Gate ,
+
+stack: ['Kaaba', 'Al-Marwah', 'Al Salam Gate', 'King AbdulAziz Gate'] >top
+-----------------------------------------
+I am at King AbdulAziz Gate place
+stack: ['Kaaba', 'Al-Marwah', 'Al Salam Gate'] >top
+Visited cities are: ['Al-Safa', 'King AbdulAziz Gate']
+The connected nodes are:
+
+-------------- Nodes --------------
+
+Kaaba ,
+Al-Safa ,
+Al-Safwa Hotel ,
+AlWaqf ,
+
+stack: ['Kaaba', 'Al-Marwah', 'Al Salam Gate', 'Al-Safwa Hotel', 'AlWaqf'] >top
+-----------------------------------------
+I am at AlWaqf place
+stack: ['Kaaba', 'Al-Marwah', 'Al Salam Gate', 'Al-Safwa Hotel'] >top
+Visited cities are: ['Al-Safa', 'King AbdulAziz Gate', 'AlWaqf']
+The connected nodes are:
+
+-------------- Nodes --------------
+
+King AbdulAziz Gate ,
+Al-Safwa Hotel ,
+
+stack: ['Kaaba', 'Al-Marwah', 'Al Salam Gate', 'Al-Safwa Hotel'] >top
+-----------------------------------------
+I am at Al-Safwa Hotel place
+stack: ['Kaaba', 'Al-Marwah', 'Al Salam Gate'] >top
+Visited cities are: ['Al-Safa', 'King AbdulAziz Gate', 'AlWaqf', 'Al-Safwa Hotel']
+The connected nodes are:
+
+-------------- Nodes --------------
+
+King AbdulAziz Gate ,
+AlHaramain Administration ,
+AlWaqf ,
+
+stack: ['Kaaba', 'Al-Marwah', 'Al Salam Gate', 'AlHaramain Administration'] >top
+-----------------------------------------
+I am at AlHaramain Administration place
+stack: ['Kaaba', 'Al-Marwah', 'Al Salam Gate'] >top
+Visited cities are: ['Al-Safa', 'King AbdulAziz Gate', 'AlWaqf', 'Al-Safwa Hotel', 'AlHaramain Administration']
+The connected nodes are:
+
+-------------- Nodes --------------
+
+Al-Safwa Hotel ,
+
+stack: ['Kaaba', 'Al-Marwah', 'Al Salam Gate'] >top
+-----------------------------------------
+I am at Al Salam Gate place
+stack: ['Kaaba', 'Al-Marwah'] >top
+Visited cities are: ['Al-Safa', 'King AbdulAziz Gate', 'AlWaqf', 'Al-Safwa Hotel', 'AlHaramain Administration', 'Al Salam Gate']
+The connected nodes are:
+
+-------------- Nodes --------------
+
+Al-Safa ,
+Macca Library ,
+
+stack: ['Kaaba', 'Al-Marwah', 'Macca Library'] >top
+-----------------------------------------
+I am at Macca Library place
+stack: ['Kaaba', 'Al-Marwah'] >top
+Visited cities are: ['Al-Safa', 'King AbdulAziz Gate', 'AlWaqf', 'Al-Safwa Hotel', 'AlHaramain Administration', 'Al Salam Gate', 'Macca Library']
+The connected nodes are:
+
+-------------- Nodes --------------
+
+Al-Marwah ,
+Al Salam Gate ,
+
+stack: ['Kaaba', 'Al-Marwah'] >top
+-----------------------------------------
+I am at Al-Marwah place
+stack: ['Kaaba'] >top
+Visited cities are: ['Al-Safa', 'King AbdulAziz Gate', 'AlWaqf', 'Al-Safwa Hotel', 'AlHaramain Administration', 'Al Salam Gate', 'Macca Library', 'Al-Marwah']
+I have reached the target place
+=========================
+ end of DFS =========================
+Choose a place number to start with:
+
+[0] Kaaba
+[1] Al-Marwah
+[2] Macca Library
+[3] Al Salam Gate
+[4] Al-Safa
+[5] King AbdulAziz Gate
+[6] Al-Safwa Hotel
+[7] AlWaqf
+[8] AlHaramain Administration
+[9] Tawsaat King Fahad
+[10] Abraj Maccah
+[11] Dar Al-Tawheed
+[12] Tawsaat King Abdullah
+[13] Jabal Omar
+[14] Jabal Alkaaba
+
+input: 4
+you will start at Al-Safa place
+Choose a place number as a target:
+
+[0] Kaaba
+[1] Al-Marwah
+[2] Macca Library
+[3] Al Salam Gate
+[4] Al-Safa
+[5] King AbdulAziz Gate
+[6] Al-Safwa Hotel
+[7] AlWaqf
+[8] AlHaramain Administration
+[9] Tawsaat King Fahad
+[10] Abraj Maccah
+[11] Dar Al-Tawheed
+[12] Tawsaat King Abdullah
+[13] Jabal Omar
+[14] Jabal Alkaaba
+
+input: 1
+your target place is Al-Marwah place
+----------Breadth First Search Traverse-------------
+I am at Al-Safa place
+queue: []
+Visited places are: ['Al-Safa']
+The connected nodes are:
+
+-------------- Nodes --------------
+
+Kaaba ,
+Al-Marwah ,
+Al Salam Gate , 
+King AbdulAziz Gate ,
+
+queue: ['Kaaba', 'Al-Marwah', 'Al Salam Gate', 'King AbdulAziz Gate']
+-----------------------------------------
+I am at Kaaba place
+queue: ['Al-Marwah', 'Al Salam Gate', 'King AbdulAziz Gate']
+Visited places are: ['Al-Safa', 'Kaaba']
+The connected nodes are:
+
+-------------- Nodes --------------
+
+Al-Marwah ,
+Al-Safa ,
+King AbdulAziz Gate ,
+Tawsaat King Fahad ,
+
+queue: ['Al-Marwah', 'Al Salam Gate', 'King AbdulAziz Gate', 'Tawsaat King Fahad']
+-----------------------------------------
+I am at Al-Marwah place
+queue: ['Al Salam Gate', 'King AbdulAziz Gate', 'Tawsaat King Fahad']
+Visited places are: ['Al-Safa', 'Kaaba', 'Al-Marwah']
+I have reached the target place
+=========================
+ end of BFS =========================
+Choose a place number to start with:
+
+[0] Kaaba
+[1] Al-Marwah
+[2] Macca Library
+[3] Al Salam Gate
+[4] Al-Safa
+[5] King AbdulAziz Gate
+[6] Al-Safwa Hotel
+[7] AlWaqf
+[8] AlHaramain Administration
+[9] Tawsaat King Fahad
+[10] Abraj Maccah
+[11] Dar Al-Tawheed
+[12] Tawsaat King Abdullah
+[13] Jabal Omar
+[14] Jabal Alkaaba
+
+input: 4
+you will start at Al-Safa place
+Choose a place number as a target:
+
+[0] Kaaba
+[1] Al-Marwah
+[2] Macca Library
+[3] Al Salam Gate
+[4] Al-Safa
+[5] King AbdulAziz Gate
+[6] Al-Safwa Hotel
+[7] AlWaqf
+[8] AlHaramain Administration
+[9] Tawsaat King Fahad
+[10] Abraj Maccah
+[11] Dar Al-Tawheed
+[12] Tawsaat King Abdullah
+[13] Jabal Omar
+[14] Jabal Alkaaba
+
+input: 1
+your target place is Al-Marwah place
+-------------- Nodes --------------
+
+Al Salam Gate ,
+Kaaba ,
+King AbdulAziz Gate ,
+Al-Marwah ,
+
+remove  Al Salam Gate from queue..
+
+-------------- Nodes --------------
+
+Kaaba ,
+King AbdulAziz Gate ,
+Al-Marwah ,
+Macca Library ,
+
+remove  Kaaba from queue..
+
+I have reached the target place
+
+complate path:
+Al-Safa -> Kaaba -> Al-Marwah
+
+DFS took 8 steps, and 0.03799772262573242 seconds to complete
+BFS took 3 steps, and 0.011996746063232422 seconds to complete
+GFS took 2 steps, and 0.007997274398803711 seconds to complete
