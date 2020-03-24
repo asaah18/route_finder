@@ -31,8 +31,8 @@ class MaccaMap:
         """set the starting place as a string"""
         cities = self.graph.get_all_nodes()
         print("Choose a place number to start with:" + "\n")
-        # start_place = cities[get_user_choice(cities)]
-        start_place = cities[0]
+        start_place = cities[get_user_choice(cities)]
+        #start_place = cities[0]
         print("you will start at", start_place, "place")
         return start_place
 
@@ -40,8 +40,8 @@ class MaccaMap:
         """set the starting place as a string"""
         cities = self.graph.get_all_nodes()
         print("Choose a place number as a target:" + "\n")
-        # start_place = cities[get_user_choice(cities)]
-        target_place = cities[1]
+        target_place = cities[get_user_choice(cities)]
+        #target_place = cities[1]
         print("your target place is", target_place, "place")
         return target_place
 
@@ -214,6 +214,19 @@ print('complate path: ')
 print(*complate_path, sep=" -> ")
 
 print()
+
+"""
 print("DFS took ", steps[0] ," steps, and " ,times[0]," seconds to complete")
 print("BFS took ", steps[1] ," steps, and " ,times[1]," seconds to complete")
 print("GFS took ", steps[2] ," steps, and " ,times[2]," seconds to complete")
+"""
+f = open("result.txt", "w")
+
+string  = "DFS took " + str(steps[0]) + " steps, and " + str(times[0]) + " seconds to complete\n"
+string += "BFS took " + str(steps[1]) + " steps, and " + str(times[1]) + " seconds to complete\n"
+string += "GFS took " + str(steps[2]) + " steps, and " + str(times[2]) + " seconds to complete\n"
+
+print(string)
+f.write(string)
+f.close()
+

@@ -1,0 +1,842 @@
+Choose a place number to start with:
+
+[0] Kaaba
+[1] Al-Marwah
+[2] Macca Library
+[3] Al Salam Gate
+[4] Al-Safa
+[5] King AbdulAziz Gate      
+[6] Al-Safwa Hotel
+[7] AlWaqf
+[8] AlHaramain Administration
+[9] Tawsaat King Fahad       
+[10] Abraj Maccah
+[11] Dar Al-Tawheed
+[12] Tawsaat King Abdullah   
+[13] Jabal Omar
+[14] Jabal Alkaaba
+
+input: 5
+you will start at King AbdulAziz Gate place
+Choose a place number as a target:
+
+[0] Kaaba
+[1] Al-Marwah
+[2] Macca Library
+[3] Al Salam Gate
+[4] Al-Safa
+[5] King AbdulAziz Gate
+[6] Al-Safwa Hotel
+[7] AlWaqf
+[8] AlHaramain Administration
+[9] Tawsaat King Fahad
+[10] Abraj Maccah
+[11] Dar Al-Tawheed
+[12] Tawsaat King Abdullah
+[13] Jabal Omar
+[14] Jabal Alkaaba
+
+input: 13
+your target place is Jabal Omar place
+----------Depth First Search Traverse-------------
+I am at King AbdulAziz Gate place
+stack: [] >top
+Visited cities are: ['King AbdulAziz Gate']
+The connected nodes are:
+
+-------------- Nodes --------------
+
+Kaaba ,
+Al-Safa ,
+Al-Safwa Hotel ,
+AlWaqf ,
+
+stack: ['Kaaba', 'Al-Safa', 'Al-Safwa Hotel', 'AlWaqf'] >top
+-----------------------------------------
+I am at AlWaqf place
+stack: ['Kaaba', 'Al-Safa', 'Al-Safwa Hotel'] >top
+Visited cities are: ['King AbdulAziz Gate', 'AlWaqf']
+The connected nodes are:
+
+-------------- Nodes --------------
+
+King AbdulAziz Gate ,
+Al-Safwa Hotel ,
+
+stack: ['Kaaba', 'Al-Safa', 'Al-Safwa Hotel'] >top
+-----------------------------------------
+I am at Al-Safwa Hotel place
+stack: ['Kaaba', 'Al-Safa'] >top
+Visited cities are: ['King AbdulAziz Gate', 'AlWaqf', 'Al-Safwa Hotel']
+The connected nodes are:
+
+-------------- Nodes --------------
+
+King AbdulAziz Gate ,
+AlHaramain Administration ,
+AlWaqf ,
+
+stack: ['Kaaba', 'Al-Safa', 'AlHaramain Administration'] >top
+-----------------------------------------
+I am at AlHaramain Administration place
+stack: ['Kaaba', 'Al-Safa'] >top
+Visited cities are: ['King AbdulAziz Gate', 'AlWaqf', 'Al-Safwa Hotel', 'AlHaramain Administration']
+The connected nodes are:
+
+-------------- Nodes --------------
+
+Al-Safwa Hotel ,
+
+stack: ['Kaaba', 'Al-Safa'] >top
+-----------------------------------------
+I am at Al-Safa place
+stack: ['Kaaba'] >top
+Visited cities are: ['King AbdulAziz Gate', 'AlWaqf', 'Al-Safwa Hotel', 'AlHaramain Administration', 'Al-Safa']
+The connected nodes are:
+
+-------------- Nodes --------------
+
+Kaaba ,
+Al-Marwah ,
+Al Salam Gate ,
+King AbdulAziz Gate ,
+
+stack: ['Kaaba', 'Al-Marwah', 'Al Salam Gate'] >top
+-----------------------------------------
+I am at Al Salam Gate place
+stack: ['Kaaba', 'Al-Marwah'] >top
+Visited cities are: ['King AbdulAziz Gate', 'AlWaqf', 'Al-Safwa Hotel', 'AlHaramain Administration', 'Al-Safa', 'Al Salam Gate']
+The connected nodes are:
+
+-------------- Nodes --------------
+
+Al-Safa ,
+Macca Library ,
+
+stack: ['Kaaba', 'Al-Marwah', 'Macca Library'] >top
+-----------------------------------------
+I am at Macca Library place
+stack: ['Kaaba', 'Al-Marwah'] >top
+Visited cities are: ['King AbdulAziz Gate', 'AlWaqf', 'Al-Safwa Hotel', 'AlHaramain Administration', 'Al-Safa', 'Al Salam Gate', 'Macca Library']
+The connected nodes are:
+
+-------------- Nodes --------------
+
+Al-Marwah ,
+Al Salam Gate ,
+
+stack: ['Kaaba', 'Al-Marwah'] >top
+-----------------------------------------
+I am at Al-Marwah place
+stack: ['Kaaba'] >top
+Visited cities are: ['King AbdulAziz Gate', 'AlWaqf', 'Al-Safwa Hotel', 'AlHaramain Administration', 'Al-Safa', 'Al Salam Gate', 'Macca Library', 'Al-Marwah']
+The connected nodes are:
+
+-------------- Nodes --------------
+
+Kaaba ,
+Macca Library ,
+Al-Safa ,
+
+stack: ['Kaaba'] >top
+-----------------------------------------
+I am at Kaaba place
+stack: [] >top
+Visited cities are: ['King AbdulAziz Gate', 'AlWaqf', 'Al-Safwa Hotel', 'AlHaramain Administration', 'Al-Safa', 'Al Salam Gate', 'Macca Library', 'Al-Marwah', 'Kaaba']
+The connected nodes are:
+
+-------------- Nodes --------------
+
+Al-Marwah ,
+Al-Safa ,
+King AbdulAziz Gate ,
+Tawsaat King Fahad ,
+
+stack: ['Tawsaat King Fahad'] >top
+-----------------------------------------
+I am at Tawsaat King Fahad place
+stack: [] >top
+Visited cities are: ['King AbdulAziz Gate', 'AlWaqf', 'Al-Safwa Hotel', 'AlHaramain Administration', 'Al-Safa', 'Al Salam Gate', 'Macca Library', 'Al-Marwah', 'Kaaba', 'Tawsaat King Fahad']
+The connected nodes are:
+
+-------------- Nodes --------------
+
+Kaaba ,
+Abraj Maccah ,
+Dar Al-Tawheed ,
+Tawsaat King Abdullah ,
+
+stack: ['Abraj Maccah', 'Dar Al-Tawheed', 'Tawsaat King Abdullah'] >top
+-----------------------------------------
+I am at Tawsaat King Abdullah place
+stack: ['Abraj Maccah', 'Dar Al-Tawheed'] >top
+Visited cities are: ['King AbdulAziz Gate', 'AlWaqf', 'Al-Safwa Hotel', 'AlHaramain Administration', 'Al-Safa', 'Al Salam Gate', 'Macca Library', 'Al-Marwah', 'Kaaba', 'Tawsaat King Fahad', 'Tawsaat King Abdullah']
+The connected nodes are:
+
+-------------- Nodes --------------
+
+Jabal Alkaaba ,
+Tawsaat King Fahad ,
+Jabal Omar ,
+
+stack: ['Abraj Maccah', 'Dar Al-Tawheed', 'Jabal Alkaaba', 'Jabal Omar'] >top
+-----------------------------------------
+I am at Jabal Omar place
+stack: ['Abraj Maccah', 'Dar Al-Tawheed', 'Jabal Alkaaba'] >top
+Visited cities are: ['King AbdulAziz Gate', 'AlWaqf', 'Al-Safwa Hotel', 'AlHaramain Administration', 'Al-Safa', 'Al Salam Gate', 'Macca Library', 'Al-Marwah', 'Kaaba', 'Tawsaat King Fahad', 'Tawsaat King Abdullah', 'Jabal Omar']
+I have reached the target place
+=========================
+ end of DFS =========================
+Choose a place number to start with:
+
+[0] Kaaba
+[1] Al-Marwah
+[2] Macca Library
+[3] Al Salam Gate
+[4] Al-Safa
+[5] King AbdulAziz Gate
+[6] Al-Safwa Hotel
+[7] AlWaqf
+[8] AlHaramain Administration
+[9] Tawsaat King Fahad
+[10] Abraj Maccah
+[11] Dar Al-Tawheed
+[12] Tawsaat King Abdullah
+[13] Jabal Omar
+[14] Jabal Alkaaba
+
+input: 5
+you will start at King AbdulAziz Gate place
+Choose a place number as a target:
+
+[0] Kaaba
+[1] Al-Marwah
+[2] Macca Library
+[3] Al Salam Gate
+[4] Al-Safa
+[5] King AbdulAziz Gate
+[6] Al-Safwa Hotel
+[7] AlWaqf
+[8] AlHaramain Administration
+[9] Tawsaat King Fahad
+[10] Abraj Maccah
+[11] Dar Al-Tawheed
+[12] Tawsaat King Abdullah
+[13] Jabal Omar
+[14] Jabal Alkaaba
+
+input: 13
+your target place is Jabal Omar place
+----------Breadth First Search Traverse-------------
+I am at King AbdulAziz Gate place
+queue: []
+Visited places are: ['King AbdulAziz Gate']
+The connected nodes are:
+
+-------------- Nodes --------------
+
+Kaaba ,
+Al-Safa ,
+Al-Safwa Hotel ,
+AlWaqf ,
+
+queue: ['Kaaba', 'Al-Safa', 'Al-Safwa Hotel', 'AlWaqf']
+-----------------------------------------
+I am at Kaaba place
+queue: ['Al-Safa', 'Al-Safwa Hotel', 'AlWaqf']
+Visited places are: ['King AbdulAziz Gate', 'Kaaba']
+The connected nodes are:
+
+-------------- Nodes --------------
+
+Al-Marwah ,
+Al-Safa ,
+King AbdulAziz Gate ,
+Tawsaat King Fahad , 
+
+queue: ['Al-Safa', 'Al-Safwa Hotel', 'AlWaqf', 'Al-Marwah', 'Tawsaat King Fahad']
+-----------------------------------------
+I am at Al-Safa place
+queue: ['Al-Safwa Hotel', 'AlWaqf', 'Al-Marwah', 'Tawsaat King Fahad']
+Visited places are: ['King AbdulAziz Gate', 'Kaaba', 'Al-Safa']
+The connected nodes are:
+
+-------------- Nodes --------------
+
+Kaaba ,
+Al-Marwah ,
+Al Salam Gate ,
+King AbdulAziz Gate ,
+
+queue: ['Al-Safwa Hotel', 'AlWaqf', 'Al-Marwah', 'Tawsaat King Fahad', 'Al Salam Gate']
+-----------------------------------------
+I am at Al-Safwa Hotel place
+queue: ['AlWaqf', 'Al-Marwah', 'Tawsaat King Fahad', 'Al Salam Gate']
+Visited places are: ['King AbdulAziz Gate', 'Kaaba', 'Al-Safa', 'Al-Safwa Hotel']
+The connected nodes are:
+
+-------------- Nodes --------------
+
+King AbdulAziz Gate ,
+AlHaramain Administration ,
+AlWaqf ,
+
+queue: ['AlWaqf', 'Al-Marwah', 'Tawsaat King Fahad', 'Al Salam Gate', 'AlHaramain Administration']
+-----------------------------------------
+I am at AlWaqf place
+queue: ['Al-Marwah', 'Tawsaat King Fahad', 'Al Salam Gate', 'AlHaramain Administration']
+Visited places are: ['King AbdulAziz Gate', 'Kaaba', 'Al-Safa', 'Al-Safwa Hotel', 'AlWaqf']
+The connected nodes are:
+
+-------------- Nodes --------------
+
+King AbdulAziz Gate ,
+Al-Safwa Hotel ,
+
+queue: ['Al-Marwah', 'Tawsaat King Fahad', 'Al Salam Gate', 'AlHaramain Administration']
+-----------------------------------------
+I am at Al-Marwah place
+queue: ['Tawsaat King Fahad', 'Al Salam Gate', 'AlHaramain Administration']
+Visited places are: ['King AbdulAziz Gate', 'Kaaba', 'Al-Safa', 'Al-Safwa Hotel', 'AlWaqf', 'Al-Marwah']
+The connected nodes are:
+
+-------------- Nodes --------------
+
+Kaaba ,
+Macca Library ,
+Al-Safa ,
+
+queue: ['Tawsaat King Fahad', 'Al Salam Gate', 'AlHaramain Administration', 'Macca Library']
+-----------------------------------------
+I am at Tawsaat King Fahad place
+queue: ['Al Salam Gate', 'AlHaramain Administration', 'Macca Library']
+Visited places are: ['King AbdulAziz Gate', 'Kaaba', 'Al-Safa', 'Al-Safwa Hotel', 'AlWaqf', 'Al-Marwah', 'Tawsaat King Fahad']
+The connected nodes are:
+
+-------------- Nodes --------------
+
+Kaaba ,
+Abraj Maccah ,
+Dar Al-Tawheed ,
+Tawsaat King Abdullah ,
+
+queue: ['Al Salam Gate', 'AlHaramain Administration', 'Macca Library', 'Abraj Maccah', 'Dar Al-Tawheed', 'Tawsaat King Abdullah']
+-----------------------------------------
+I am at Al Salam Gate place
+queue: ['AlHaramain Administration', 'Macca Library', 'Abraj Maccah', 'Dar Al-Tawheed', 'Tawsaat King Abdullah']
+Visited places are: ['King AbdulAziz Gate', 'Kaaba', 'Al-Safa', 'Al-Safwa Hotel', 'AlWaqf', 'Al-Marwah', 'Tawsaat King Fahad', 'Al Salam Gate']
+The connected nodes are:
+
+-------------- Nodes --------------
+
+Al-Safa ,
+Macca Library ,
+
+queue: ['AlHaramain Administration', 'Macca Library', 'Abraj Maccah', 'Dar Al-Tawheed', 'Tawsaat King Abdullah']
+-----------------------------------------
+I am at AlHaramain Administration place
+queue: ['Macca Library', 'Abraj Maccah', 'Dar Al-Tawheed', 'Tawsaat King Abdullah']
+Visited places are: ['King AbdulAziz Gate', 'Kaaba', 'Al-Safa', 'Al-Safwa Hotel', 'AlWaqf', 'Al-Marwah', 'Tawsaat King Fahad', 'Al Salam Gate', 'AlHaramain Administration']
+The connected nodes are:
+
+-------------- Nodes --------------
+
+Al-Safwa Hotel ,
+
+queue: ['Macca Library', 'Abraj Maccah', 'Dar Al-Tawheed', 'Tawsaat King Abdullah']
+-----------------------------------------
+I am at Macca Library place
+queue: ['Abraj Maccah', 'Dar Al-Tawheed', 'Tawsaat King Abdullah']
+Visited places are: ['King AbdulAziz Gate', 'Kaaba', 'Al-Safa', 'Al-Safwa Hotel', 'AlWaqf', 'Al-Marwah', 'Tawsaat King Fahad', 'Al Salam Gate', 'AlHaramain Administration', 'Macca Library']
+The connected nodes are:
+
+-------------- Nodes --------------
+
+Al-Marwah ,
+Al Salam Gate ,
+
+queue: ['Abraj Maccah', 'Dar Al-Tawheed', 'Tawsaat King Abdullah']
+-----------------------------------------
+I am at Abraj Maccah place
+queue: ['Dar Al-Tawheed', 'Tawsaat King Abdullah']
+Visited places are: ['King AbdulAziz Gate', 'Kaaba', 'Al-Safa', 'Al-Safwa Hotel', 'AlWaqf', 'Al-Marwah', 'Tawsaat King Fahad', 'Al Salam Gate', 'AlHaramain Administration', 'Macca Library', 'Abraj Maccah']
+The connected nodes are:
+
+-------------- Nodes --------------
+
+Tawsaat King Fahad ,
+Dar Al-Tawheed ,
+
+queue: ['Dar Al-Tawheed', 'Tawsaat King Abdullah']
+-----------------------------------------
+I am at Dar Al-Tawheed place
+queue: ['Tawsaat King Abdullah']
+Visited places are: ['King AbdulAziz Gate', 'Kaaba', 'Al-Safa', 'Al-Safwa Hotel', 'AlWaqf', 'Al-Marwah', 'Tawsaat King Fahad', 'Al Salam Gate', 'AlHaramain Administration', 'Macca Library', 'Abraj Maccah', 'Dar Al-Tawheed']
+The connected nodes are:
+
+-------------- Nodes --------------
+
+Tawsaat King Fahad ,
+Abraj Maccah ,
+Jabal Omar ,
+
+queue: ['Tawsaat King Abdullah', 'Jabal Omar']
+-----------------------------------------
+I am at Tawsaat King Abdullah place
+queue: ['Jabal Omar']
+Visited places are: ['King AbdulAziz Gate', 'Kaaba', 'Al-Safa', 'Al-Safwa Hotel', 'AlWaqf', 'Al-Marwah', 'Tawsaat King Fahad', 'Al Salam Gate', 'AlHaramain Administration', 'Macca Library', 'Abraj Maccah', 'Dar Al-Tawheed', 'Tawsaat King Abdullah']
+The connected nodes are:
+
+-------------- Nodes --------------
+
+Jabal Alkaaba ,
+Tawsaat King Fahad ,
+Jabal Omar ,
+
+queue: ['Jabal Omar', 'Jabal Alkaaba']
+-----------------------------------------
+I am at Jabal Omar place
+queue: ['Jabal Alkaaba']
+Visited places are: ['King AbdulAziz Gate', 'Kaaba', 'Al-Safa', 'Al-Safwa Hotel', 'AlWaqf', 'Al-Marwah', 'Tawsaat King Fahad', 'Al Salam Gate', 'AlHaramain Administration', 'Macca Library', 'Abraj Maccah', 'Dar Al-Tawheed', 'Tawsaat King Abdullah', 'Jabal Omar']
+I have reached the target place
+=========================
+ end of BFS =========================
+Choose a place number to start with:
+
+[0] Kaaba
+[1] Al-Marwah
+[2] Macca Library
+[3] Al Salam Gate
+[4] Al-Safa
+[5] King AbdulAziz Gate
+[6] Al-Safwa Hotel
+[7] AlWaqf
+[8] AlHaramain Administration
+[9] Tawsaat King Fahad
+[10] Abraj Maccah
+[11] Dar Al-Tawheed
+[12] Tawsaat King Abdullah
+[13] Jabal Omar
+[14] Jabal Alkaaba
+
+input: 5
+you will start at King AbdulAziz Gate place
+Choose a place number as a target:
+
+[0] Kaaba
+[1] Al-Marwah
+[2] Macca Library
+[3] Al Salam Gate
+[4] Al-Safa
+[5] King AbdulAziz Gate
+[6] Al-Safwa Hotel
+[7] AlWaqf
+[8] AlHaramain Administration
+[9] Tawsaat King Fahad
+[10] Abraj Maccah
+[11] Dar Al-Tawheed
+[12] Tawsaat King Abdullah
+[13] Jabal Omar
+[14] Jabal Alkaaba
+
+input: 13
+your target place is Jabal Omar place
+-------------- Nodes --------------
+
+Kaaba ,
+Al-Safa ,
+Al-Safwa Hotel ,
+AlWaqf ,
+
+remove  Kaaba from queue..
+
+-------------- Nodes --------------
+
+Al-Safa ,
+Al-Safwa Hotel ,
+AlWaqf ,
+Al-Safa ,
+Tawsaat King Fahad ,
+Al-Marwah ,
+
+remove  Al-Safa from queue..
+
+-------------- Nodes --------------
+
+Al-Safwa Hotel ,
+AlWaqf ,
+Al-Safa ,
+Tawsaat King Fahad , 
+Al-Marwah ,
+Al Salam Gate ,
+Kaaba ,
+Al-Marwah ,
+
+remove  Al-Safwa Hotel from queue..
+
+-------------- Nodes --------------
+
+AlWaqf ,
+Al-Safa ,
+Tawsaat King Fahad ,
+Al-Marwah ,
+Al Salam Gate ,
+Kaaba ,
+Al-Marwah , 
+AlWaqf ,
+AlHaramain Administration ,
+
+remove  AlWaqf from queue..
+
+-------------- Nodes --------------
+
+Al-Safa ,
+Tawsaat King Fahad ,
+Al-Marwah ,
+Al Salam Gate ,
+Kaaba ,
+Al-Marwah ,
+AlWaqf ,
+AlHaramain Administration ,
+Al-Safwa Hotel ,
+
+remove  Al-Safa from queue..
+
+-------------- Nodes --------------
+
+Tawsaat King Fahad ,
+Al-Marwah ,
+Al Salam Gate ,
+Kaaba ,
+Al-Marwah ,
+AlWaqf ,
+AlHaramain Administration ,
+Al-Safwa Hotel ,
+Al Salam Gate ,
+Kaaba ,
+Al-Marwah ,
+
+remove  Tawsaat King Fahad from queue..
+
+-------------- Nodes --------------
+
+Al-Marwah ,
+Al Salam Gate ,
+Kaaba ,
+Al-Marwah ,
+AlWaqf ,
+AlHaramain Administration ,
+Al-Safwa Hotel ,
+Al Salam Gate ,
+Kaaba ,
+Al-Marwah , 
+Abraj Maccah ,
+Dar Al-Tawheed ,
+Kaaba ,
+Tawsaat King Abdullah ,
+
+remove  Al-Marwah from queue..
+
+-------------- Nodes --------------
+
+Al Salam Gate ,
+Kaaba ,
+Al-Marwah ,
+AlWaqf ,
+AlHaramain Administration ,
+Al-Safwa Hotel ,
+Al Salam Gate ,
+Kaaba ,
+Al-Marwah ,
+Abraj Maccah ,
+Dar Al-Tawheed ,
+Kaaba ,
+Tawsaat King Abdullah ,
+Macca Library ,
+Kaaba ,
+Al-Safa ,
+
+remove  Al Salam Gate from queue..
+
+-------------- Nodes --------------
+
+Kaaba ,
+Al-Marwah ,
+AlWaqf ,
+AlHaramain Administration ,
+Al-Safwa Hotel ,
+Al Salam Gate ,
+Kaaba ,
+Al-Marwah ,
+Abraj Maccah ,
+Dar Al-Tawheed ,
+Kaaba ,
+Tawsaat King Abdullah ,
+Macca Library ,
+Kaaba ,
+Al-Safa ,
+Al-Safa ,
+Macca Library ,
+
+remove  Kaaba from queue..
+
+-------------- Nodes --------------
+
+Al-Marwah ,
+AlWaqf ,
+AlHaramain Administration ,
+Al-Safwa Hotel ,
+Al Salam Gate ,
+Kaaba ,
+Al-Marwah ,
+Abraj Maccah ,
+Dar Al-Tawheed ,
+Kaaba ,
+Tawsaat King Abdullah ,
+Macca Library ,
+Kaaba ,
+Al-Safa ,
+Al-Safa ,
+Macca Library ,
+Al-Safa ,
+Tawsaat King Fahad ,
+Al-Marwah ,
+
+remove  Al-Marwah from queue..
+
+-------------- Nodes --------------
+
+AlWaqf ,
+AlHaramain Administration ,
+Al-Safwa Hotel ,
+Al Salam Gate ,
+Kaaba ,
+Al-Marwah ,
+Abraj Maccah ,
+Dar Al-Tawheed ,
+Kaaba ,
+Tawsaat King Abdullah ,
+Macca Library ,
+Kaaba ,
+Al-Safa ,
+Al-Safa ,
+Macca Library ,
+Al-Safa ,
+Tawsaat King Fahad ,
+Al-Marwah ,
+Macca Library ,
+Kaaba ,
+Al-Safa ,
+
+remove  AlWaqf from queue..
+
+-------------- Nodes --------------
+
+AlHaramain Administration ,
+Al-Safwa Hotel ,
+Al Salam Gate ,
+Kaaba ,
+Al-Marwah ,
+Abraj Maccah ,
+Dar Al-Tawheed ,
+Kaaba ,
+Tawsaat King Abdullah ,
+Macca Library ,
+Kaaba ,
+Al-Safa ,
+Al-Safa ,
+Macca Library ,
+Al-Safa ,
+Tawsaat King Fahad ,
+Al-Marwah ,
+Macca Library ,
+Kaaba ,
+Al-Safa ,
+Al-Safwa Hotel ,
+
+remove  AlHaramain Administration from queue..
+
+-------------- Nodes --------------
+
+Al-Safwa Hotel ,
+Al Salam Gate ,
+Kaaba ,
+Al-Marwah ,
+Abraj Maccah ,
+Dar Al-Tawheed ,
+Kaaba ,
+Tawsaat King Abdullah ,
+Macca Library ,
+Kaaba ,
+Al-Safa ,
+Al-Safa ,
+Macca Library ,
+Al-Safa ,
+Tawsaat King Fahad ,
+Al-Marwah ,
+Macca Library ,
+Kaaba ,
+Al-Safa ,
+Al-Safwa Hotel ,
+Al-Safwa Hotel ,
+
+remove  Al-Safwa Hotel from queue..
+
+-------------- Nodes --------------
+
+Al Salam Gate ,
+Kaaba ,
+Al-Marwah ,
+Abraj Maccah , 
+Dar Al-Tawheed ,
+Kaaba ,
+Tawsaat King Abdullah ,
+Macca Library ,
+Kaaba ,
+Al-Safa ,
+Al-Safa ,
+Macca Library ,
+Al-Safa ,
+Tawsaat King Fahad ,
+Al-Marwah ,
+Macca Library ,
+Kaaba ,
+Al-Safa ,
+Al-Safwa Hotel ,
+Al-Safwa Hotel ,
+AlWaqf ,
+AlHaramain Administration ,
+
+remove  Al Salam Gate from queue..
+
+-------------- Nodes --------------
+
+Kaaba ,
+Al-Marwah ,
+Abraj Maccah ,
+Dar Al-Tawheed ,
+Kaaba ,
+Tawsaat King Abdullah ,
+Macca Library , 
+Kaaba ,
+Al-Safa ,
+Al-Safa ,
+Macca Library ,
+Al-Safa ,
+Tawsaat King Fahad ,
+Al-Marwah ,
+Macca Library ,
+Kaaba ,
+Al-Safa ,
+Al-Safwa Hotel ,
+Al-Safwa Hotel ,
+AlWaqf ,
+AlHaramain Administration ,
+Al-Safa ,
+Macca Library ,
+
+remove  Kaaba from queue..
+
+-------------- Nodes --------------
+
+Al-Marwah ,
+Abraj Maccah ,
+Dar Al-Tawheed ,
+Kaaba ,
+Tawsaat King Abdullah ,
+Macca Library ,
+Kaaba ,
+Al-Safa ,
+Al-Safa ,
+Macca Library ,
+Al-Safa ,
+Tawsaat King Fahad ,
+Al-Marwah ,
+Macca Library ,
+Kaaba ,
+Al-Safa ,
+Al-Safwa Hotel ,
+Al-Safwa Hotel ,
+AlWaqf ,
+AlHaramain Administration ,
+Al-Safa ,
+Macca Library ,
+Al-Safa ,
+Tawsaat King Fahad ,
+Al-Marwah ,
+
+remove  Al-Marwah from queue..
+
+-------------- Nodes --------------
+
+Abraj Maccah ,
+Dar Al-Tawheed ,
+Kaaba ,
+Tawsaat King Abdullah ,
+Macca Library , 
+Kaaba ,
+Al-Safa ,
+Al-Safa ,
+Macca Library ,
+Al-Safa ,
+Tawsaat King Fahad ,
+Al-Marwah ,
+Macca Library ,
+Kaaba ,
+Al-Safa ,
+Al-Safwa Hotel ,
+Al-Safwa Hotel ,
+AlWaqf ,
+AlHaramain Administration ,
+Al-Safa ,
+Macca Library ,
+Al-Safa ,
+Tawsaat King Fahad ,
+Al-Marwah ,
+Macca Library ,
+Kaaba ,
+Al-Safa ,
+
+remove  Abraj Maccah from queue..
+
+-------------- Nodes --------------
+
+Dar Al-Tawheed ,
+Kaaba ,
+Tawsaat King Abdullah ,
+Macca Library ,
+Kaaba ,
+Al-Safa ,
+Al-Safa ,
+Macca Library ,
+Al-Safa ,
+Tawsaat King Fahad ,
+Al-Marwah ,
+Macca Library ,
+Kaaba ,
+Al-Safa ,
+Al-Safwa Hotel ,
+Al-Safwa Hotel ,
+AlWaqf ,
+AlHaramain Administration ,
+Al-Safa ,
+Macca Library ,
+Al-Safa ,
+Tawsaat King Fahad ,
+Al-Marwah ,
+Macca Library ,
+Kaaba ,
+Al-Safa ,
+Tawsaat King Fahad ,
+Dar Al-Tawheed ,
+
+remove  Dar Al-Tawheed from queue..
+
+I have reached the target place
+
+complate path:
+King AbdulAziz Gate -> Dar Al-Tawheed -> Jabal Omar
+
+DFS took 12 steps, and 0.03998684883117676 seconds to complete
+BFS took 14 steps, and 0.06098055839538574 seconds to complete
+GFS took 18 steps, and 0.10196638107299805 seconds to complete
